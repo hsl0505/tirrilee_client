@@ -6,30 +6,24 @@
  * @flow strict-local
  */
 
+import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  // SafeAreaView,
-  // StyleSheet,
-  // ScrollView,
-  View,
-  Text,
-  // StatusBar,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
 // import {
-//   Header,
-//   LearnMoreLinks,
-//   Colors,
-//   DebugInstructions,
-//   ReloadInstructions,
-// } from 'react-native/Libraries/NewAppScreen';
+//   // StyleSheet,
+//   View,
+//   Text,
+// } from 'react-native';
+
+import InitScreen from './screens/InitScreen';
 
 const App = () => {
   console.log('test');
   return (
-    <View>
-      <Text>테스트</Text>
-    </View>
+    <NavigationContainer>
+      <InitScreen />
+    </NavigationContainer>
   );
 };
 
