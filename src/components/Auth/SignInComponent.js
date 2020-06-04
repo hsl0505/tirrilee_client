@@ -12,7 +12,6 @@ import {
 import {Input, CheckBox, Button} from 'react-native-elements';
 
 const {width, height} = Dimensions.get('window');
-// console.log(Dimensions.get('window').height);
 
 const styles = StyleSheet.create({
   container: {
@@ -101,7 +100,8 @@ const styles = StyleSheet.create({
   },
 });
 
-function SignInComponent() {
+function SignInComponent(props) {
+  const {navigation, login} = props;
   // 임시 체크 state
   const [isChecked, setCheck] = useState(false);
 
@@ -125,6 +125,7 @@ function SignInComponent() {
         containerStyle={styles.input_containerStyle}
         inputStyle={styles.input_textInput}
         inputContainerStyle={styles.input_inputContainerStyle}
+        secureTextEntry={true}
       />
       <CheckBox
         title="로그인 상태 유지하기"
@@ -156,12 +157,14 @@ function SignInComponent() {
         title="로그인"
         containerStyle={styles.loginBtn_btnStyle}
         titleStyle={styles.btn_textStyle}
+        onPress={() => login(true)}
       />
       <Button
         title="회원가입"
         type="outline"
         containerStyle={styles.signUpBtn_btnStyle}
         titleStyle={styles.btn_textStyle}
+        onPress={() => navigation.navigate('회원가입')}
       />
 
       <View style={styles.find_box}>
