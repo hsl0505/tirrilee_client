@@ -9,7 +9,6 @@ import {
   ScrollView,
 } from 'react-native';
 import {Input, Button} from 'react-native-elements';
-// import {useNavigation} from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('window');
 
@@ -18,7 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     alignItems: 'center',
-    // justifyContent: 'flex-end',
   },
   signUp_text: {
     fontSize: 16,
