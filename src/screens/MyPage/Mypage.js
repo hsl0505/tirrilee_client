@@ -1,15 +1,25 @@
 import * as React from 'react';
-import {
-  // StyleSheet,
-  View,
-  Text,
-} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import MypageMainScreen from './MypageMainScreen';
+import MyPageEditScreen from './MyPageEditScreen';
+
+const MyPageStack = createStackNavigator();
 
 function MyPage() {
   return (
-    <View>
-      <Text>MyPage screen</Text>
-    </View>
+    <MyPageStack.Navigator>
+      <MyPageStack.Screen
+        name="myPageMainScreen"
+        component={MypageMainScreen}
+        options={{headerShown: false}}
+      />
+      <MyPageStack.Screen
+        name="myPageEditScreen"
+        component={MyPageEditScreen}
+        options={{headerShown: false}}
+      />
+    </MyPageStack.Navigator>
   );
 }
 
