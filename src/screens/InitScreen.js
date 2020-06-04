@@ -30,6 +30,7 @@ function InitScreen() {
               name="회원가입"
               component={SignUp}
               options={{
+                headerShown: false,
                 headerTitleAlign: 'center',
                 headerTitleStyle: {
                   fontSize: 16,
