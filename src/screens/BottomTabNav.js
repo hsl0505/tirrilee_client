@@ -17,6 +17,7 @@ function BottomTabNav() {
       tabBarOptions={{
         activeTintColor: '#0379c7',
         inactiveTintColor: 'gray',
+        style: {height: 56},
       }}>
       <BottomTab.Screen
         name="홈"
