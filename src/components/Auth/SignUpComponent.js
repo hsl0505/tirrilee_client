@@ -7,8 +7,10 @@ import {
   Dimensions,
   KeyboardAvoidingView,
   ScrollView,
+  Image,
 } from 'react-native';
 import {Input, Button} from 'react-native-elements';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const {width, height} = Dimensions.get('window');
 
@@ -17,6 +19,26 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     alignItems: 'center',
+  },
+  header: {
+    width,
+    height: height * 0.064139942,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginTop: height * 0.014577259,
+    // backgroundColor: 'red',
+  },
+  header_backBtn: {
+    width: 24,
+    height: 24,
+    marginLeft: width * 0.032,
+    marginRight: width * 0.325333333,
+  },
+  header_title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#0379c7',
   },
   signUp_text: {
     fontSize: 16,
@@ -63,7 +85,8 @@ const styles = StyleSheet.create({
   },
 });
 
-function SignUpComponent() {
+function SignUpComponent(props) {
+  const {navigation} = props;
   // 임시 state
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -83,6 +106,16 @@ function SignUpComponent() {
     <KeyboardAvoidingView style={{flex: 1}} keyboardVerticalOffset={10} enabled>
       <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
         <View style={styles.container}>
+          <View style={styles.header}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Image
+                source={require('../../asset/signUp/back_button_gray.png')}
+                style={styles.header_backBtn}
+              />
+            </TouchableOpacity>
+
+            <Text style={styles.header_title}>회원가입</Text>
+          </View>
           <Text style={styles.signUp_text}>가입 정보를 입력해 주세요 :)</Text>
           <Text style={styles.label}>이메일</Text>
           <Input
