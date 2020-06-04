@@ -1,16 +1,8 @@
 import * as React from 'react';
-import {
-  // StyleSheet,
-  View,
-  Text,
-} from 'react-native';
+import SignUpComponent from '../../components/Auth/SignUpComponent';
 
 function SignUp() {
-  return (
-    <View>
-      <Text>SignUp screen</Text>
-    </View>
-  );
+  return <SignUpComponent />;
 }
 
 export default SignUp;

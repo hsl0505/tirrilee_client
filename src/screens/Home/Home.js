@@ -1,16 +1,9 @@
 import * as React from 'react';
-import {
-  // StyleSheet,
-  View,
-  Text,
-} from 'react-native';
+
+import HomeComponent from '../../components/Home/HomeComponent';
 
 function Home() {
-  return (
-    <View>
-      <Text>Home screen</Text>
-    </View>
-  );
+  return <HomeComponent />;
 }
 
 export default Home;
