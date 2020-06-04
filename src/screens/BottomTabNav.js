@@ -2,8 +2,6 @@
 import * as React from 'react';
 import {Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-// import AntDesign from 'react-native-vector-icons/AntDesign';
-// import Feather from 'react-native-vector-icons/Feather';
 
 import Home from './Home/Home';
 import Search from './Search/Search';
