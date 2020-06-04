@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   View,
@@ -6,6 +7,8 @@ import {
   Image,
   Dimensions,
   TextInput,
+  ScrollView,
+  KeyboardAvoidingView,
 } from 'react-native';
 
 import {Button} from 'react-native-elements';
@@ -100,58 +103,65 @@ const styles = StyleSheet.create({
 export default function MyPageEditComponent(props) {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image
-            source={require('../../asset/signUp/back_button_gray.png')}
-            style={styles.header_backBtn}
-          />
-        </TouchableOpacity>
+    <KeyboardAvoidingView style={{flex: 1}} enabled keyboardVerticalOffset={10}>
+      <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
+        <View style={styles.container}>
+          <View style={styles.header}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Image
+                source={require('../../asset/signUp/back_button_gray.png')}
+                style={styles.header_backBtn}
+              />
+            </TouchableOpacity>
 
-        <Text style={styles.header_complete}>완료</Text>
-      </View>
+            <Text style={styles.header_complete}>완료</Text>
+          </View>
 
-      <View style={styles.profile}>
-        <Image
-          source={require('../../asset/myPage/profile_img.png')}
-          style={styles.profile_img}
-        />
-        <Button
-          title="프로필 변경"
-          buttonStyle={styles.profile_btn}
-          titleStyle={styles.profile_btn_text}
-        />
-      </View>
+          <View style={styles.profile}>
+            <Image
+              source={require('../../asset/myPage/profile_img.png')}
+              style={styles.profile_img}
+            />
+            <Button
+              title="프로필 변경"
+              buttonStyle={styles.profile_btn}
+              titleStyle={styles.profile_btn_text}
+            />
+          </View>
 
-      <View style={styles.editContainer}>
-        <Text style={styles.editContainer_title}>이름</Text>
-        <View style={styles.editContainer_divider}>
-          <TextInput value="이티릴" style={styles.editContainer_textInput} />
+          <View style={styles.editContainer}>
+            <Text style={styles.editContainer_title}>이름</Text>
+            <View style={styles.editContainer_divider}>
+              <TextInput
+                value="이티릴"
+                style={styles.editContainer_textInput}
+              />
+            </View>
+          </View>
+
+          <View style={styles.editContainer}>
+            <Text style={styles.editContainer_title_email}>이메일</Text>
+            <View style={styles.editContainer_divider}>
+              <TextInput
+                value="tirrilee@gmail.com"
+                style={styles.editContainer_textInput}
+              />
+            </View>
+          </View>
+
+          <View style={styles.editContainer}>
+            <Text style={styles.editContainer_title}>소개</Text>
+            <View style={styles.editContainer_divider}>
+              <TextInput
+                value="안녕하세요 이티릴입니다. 소개내용이 들어갑니다."
+                style={styles.editContainer_textInput_explain}
+                multiline
+                numberOfLines={2}
+              />
+            </View>
+          </View>
         </View>
-      </View>
-
-      <View style={styles.editContainer}>
-        <Text style={styles.editContainer_title_email}>이메일</Text>
-        <View style={styles.editContainer_divider}>
-          <TextInput
-            value="tirrilee@gmail.com"
-            style={styles.editContainer_textInput}
-          />
-        </View>
-      </View>
-
-      <View style={styles.editContainer}>
-        <Text style={styles.editContainer_title}>소개</Text>
-        <View style={styles.editContainer_divider}>
-          <TextInput
-            value="안녕하세요 이티릴입니다. 소개내용이 들어갑니다."
-            style={styles.editContainer_textInput_explain}
-            multiline
-            numberOfLines={2}
-          />
-        </View>
-      </View>
-    </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
