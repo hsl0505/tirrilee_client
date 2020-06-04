@@ -42,6 +42,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginRight: width * 0.024,
   },
+  heart: {
+    width: 24,
+    height: 24,
+    position: 'absolute',
+    top: -112,
+    right: 8,
+  },
 });
 
 export default function CardSComponent(props) {
@@ -52,6 +59,10 @@ export default function CardSComponent(props) {
       image={image}
       imageStyle={styles.image}
       containerStyle={styles.cardContainer}>
+      <Image
+        source={require('../../../asset/card/heart_disabled_line_white.png')}
+        style={styles.heart}
+      />
       <View style={styles.textLine_1}>
         <Text style={{fontSize: 14}}>{name}</Text>
         <Text style={{fontSize: 12, color: '#707070'}}>{seller}</Text>
