@@ -7,8 +7,7 @@ import {
   Dimensions,
   ImageBackground,
 } from 'react-native';
-// import AntDesign from 'react-native-vector-icons/AntDesign';
-// import Feather from 'react-native-vector-icons/Feather';
+
 import {Button} from 'react-native-elements';
 
 const {width, height} = Dimensions.get('window');
