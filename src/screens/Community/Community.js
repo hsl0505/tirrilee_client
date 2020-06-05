@@ -1,15 +1,25 @@
 import * as React from 'react';
-import {
-  // StyleSheet,
-  View,
-  Text,
-} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import CommunityMainScreen from './CommunityMainScreen';
+import CommunityWriteScreen from './CommunityWriteScreen';
+
+const CommunityStack = createStackNavigator();
 
 function Community() {
   return (
-    <View>
-      <Text>Community screen</Text>
-    </View>
+    <CommunityStack.Navigator>
+      <CommunityStack.Screen
+        name="communityMain"
+        component={CommunityMainScreen}
+        options={{headerShown: false}}
+      />
+      <CommunityStack.Screen
+        name="communityWrite"
+        component={CommunityWriteScreen}
+        options={{headerShown: false}}
+      />
+    </CommunityStack.Navigator>
   );
 }
 
